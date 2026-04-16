@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Recitaciones del Corán</string>
+    <string name="search_title">Buscar</string>
+    <string name="title_activity_recites_name">Nombres de los recitadores</string>
+    <string name="title_activity_aya_list">Lista de suras</string>
+    <string name="back">atrás</string>
+    <string name="menu">Ajustes</string>
+    <string name="downlaod">descargar</string>
+    <string name="title_activity_managerdb">Escuchar</string>
+    <string name="sort">Clasificar</string>
+    <string name="rateapp">Calificar aplicación</string>
+    <string name="separeteapp">Compartir aplicación</string>
+    <string name="Languages">Idioma</string>
+    <string name="sharemessage">Esta increíble aplicación para escuchar el Corán me gustaría compartirla contigo</string>
+    <string name="ar">Arábica</string>
+    <string name="en">Inglés</string>
+    <string name="press_back_again_to_exit">Presione de nuevo para salir</string>
+    <string name="about">Acerca de</string>
+    <string name="app_version">Versión %1$s</string>
+    <string name="privacy_policy">Política de privacidad</string>
+</resources>

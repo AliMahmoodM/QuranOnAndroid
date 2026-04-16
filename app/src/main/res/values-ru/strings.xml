@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Чтения Корана</string>
+    <string name="search_title">Поиск</string>
+    <string name="title_activity_recites_name">Имена чтецов</string>
+    <string name="title_activity_aya_list">Список сур</string>
+    <string name="back">назад</string>
+    <string name="menu">Настройки</string>
+    <string name="downlaod">скачать</string>
+    <string name="title_activity_managerdb">Слушать</string>
+    <string name="sort">Сортировать</string>
+    <string name="rateapp">Оценить приложение</string>
+    <string name="separeteapp">Поделиться приложением</string>
+    <string name="Languages">Язык</string>
+    <string name="sharemessage">Я хотел бы поделиться с вами этим замечательным приложением для прослушивания Корана</string>
+    <string name="ar">арабский</string>
+    <string name="en">английский</string>
+    <string name="press_back_again_to_exit">Нажмите еще раз, чтобы выйти</string>
+    <string name="about">О приложении</string>
+    <string name="app_version">Версия %1$s</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+</resources>

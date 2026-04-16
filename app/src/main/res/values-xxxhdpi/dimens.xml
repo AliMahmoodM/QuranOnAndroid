@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="FontSize">18sp</dimen>
+    <dimen name="buttonFontSize">15sp</dimen>
+    <dimen name="OnlineFontSize">12sp</dimen>
+    <dimen name="FontSizeTablet">30sp</dimen>
+
+
+</resources>

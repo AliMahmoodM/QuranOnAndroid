@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sfântul Coran MP3</string>
+
+    <string name="search_title">Search</string>
+
+    <string name="title_activity_recites_name">Recitatorii</string>
+    <string name="title_activity_aya_list">114 Capitole</string>
+    <string name="back"> Înapoi </string>
+    <string name="menu">Setări</string>
+    <string name="downlaod">Descărcați</string>
+    <string name="title_activity_managerdb">Ascultare </string>
+    <string name="sort">Sortează</string>
+
+    <string name="rateapp">Evalueaza aplicatie </string>
+    <string name="separeteapp"> Distribuiți aplicatie </string>
+    <string name="Languages">Language</string>
+    <string name="sharemessage"> Aș dori să împărtășesc această aplicație împreună cu dvs. pentru a asculta Coranul cu peste 100 de recitatori.</string>
+    <string name="ar">Arabic</string>
+    <string name="en">English</string>
+    <string name="press_back_again_to_exit">Apăsați din nou pentru a ieși</string>
+
+    <string name="about">Despre</string>
+    <string name="app_version">Versiunea %1$s</string>
+    <string name="privacy_policy">Politica de confidențialitate</string>
+
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "836136582449",
+    "firebase_url": "https://quranforandroid-master.firebaseio.com",
+    "project_id": "quranforandroid-master",
+    "storage_bucket": "quranforandroid-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836136582449:android:e8553537dc0cad50",
+        "android_client_info": {
+          "package_name": "com.live.holyquranmp3.quran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836136582449-esbag7fta194sdn0enqvv6pjiqvjocpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.live.holyquranmp3.quran",
+            "certificate_hash": "f76a46ae3968fb83ef757a9bfaa8828b56bb89cf"
+          }
+        },
+        {
+          "client_id": "836136582449-3r24u16rr4uab6rlv90qatc0g5jocjsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWeWiE7x3Lh-BV7mKGjiYtP6Jx2_R80gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836136582449-3r24u16rr4uab6rlv90qatc0g5jocjsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

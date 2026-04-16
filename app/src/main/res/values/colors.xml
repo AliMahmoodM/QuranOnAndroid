@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#26a69a</color>
+    <color name="colorPrimaryDark">#007769</color>
+    <color name="colorAccent">#26a69a</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="whitebackground">#d4d3d3</color>
+    <color name="whiteblue">#E1F5FE</color>
+
+    <color name="dark_blue">#010f1f</color>
+    <color name="light_blue">#0a1f3a</color>
+    
+    <color name="icon_teal">#26a69a</color>
+    <color name="icon_dark_gray">#444444</color>
+</resources>

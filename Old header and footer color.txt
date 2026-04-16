@@ -1,0 +1,3 @@
+ android:startColor="#3f3f3f"
+        android:centerColor="#2f2f2f"
+        android:endColor="#1c1c1c"

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Récitations du Coran</string>
+    <string name="search_title">Chercher</string>
+    <string name="title_activity_recites_name">Noms des récitants</string>
+    <string name="title_activity_aya_list">Liste des sourates</string>
+    <string name="back">arrière</string>
+    <string name="menu">Paramètres</string>
+    <string name="downlaod">télécharger</string>
+    <string name="title_activity_managerdb">Écouter</string>
+    <string name="sort">Trier</string>
+    <string name="rateapp">Évaluer l\'application</string>
+    <string name="separeteapp">Partager l\'application</string>
+    <string name="Languages">Langue</string>
+    <string name="sharemessage">Cette application géniale pour écouter le Coran que j\'aimerais partager avec vous</string>
+    <string name="ar">Arabe</string>
+    <string name="en">Anglais</string>
+    <string name="press_back_again_to_exit">Appuyez à nouveau pour sortir</string>
+    <string name="about">À propos</string>
+    <string name="app_version">Version %1$s</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+</resources>

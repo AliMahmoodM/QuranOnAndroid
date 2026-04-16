@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="app_name"> تلاوات القرأن الكريم</string>
+    <string name="title_activity_recites_name">القراء</string>
+     <string name="title_activity_aya_list">قائمة السور</string>
+    <string name="back"> رجوع</string>
+    <string name="menu">الإعدادات</string>
+    <string name="downlaod">تنزيل</string>
+<string name="title_activity_managerdb">استماع</string>
+
+    <string name="search_title">بحث</string>
+    <string name="sort">فرز</string>
+    <string name="rateapp">قيم  التطبيق</string>
+    <string name="separeteapp">  شارك التطبيق</string>
+    <string name="Languages"> لغة</string>
+    <string name="sharemessage"> تطبيق تلاوات بصوت العديد من القراء اود مشاركته معك</string>
+    <string name="ar"> عربي</string>
+    <string name="en"> انكليزي</string>
+    <string name="press_back_again_to_exit">اضغط مرة أخرى للخروج</string>
+
+    <string name="about">حول التطبيق</string>
+    <string name="app_version">الإصدار %1$s</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+</resources>

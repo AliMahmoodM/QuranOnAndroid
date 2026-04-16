@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="FontSize">10sp</dimen>
+    <dimen name="buttonFontSize">8sp</dimen>
+    <dimen name="OnlineFontSize">7sp</dimen>
+</resources>
