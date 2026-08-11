@@ -181,7 +181,8 @@ public class AyaList extends BaseActivity implements LnaguageClass.SurahListList
             holder.title.setText((position + 1) + ". " + temp.RealName);
 
             holder.itemView.setOnClickListener(v -> {
-                DisplayAya(position);
+                int originalPosition = listrecitesAya.indexOf(temp);
+                DisplayAya(originalPosition);
             });
         }
 

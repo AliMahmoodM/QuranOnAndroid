@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quranlisten2"
+    android:background="@drawable/quranlisten3"
     tools:context="com.live.holyquranmp3.quran.managerdb">
 
     <com.google.android.material.appbar.AppBarLayout

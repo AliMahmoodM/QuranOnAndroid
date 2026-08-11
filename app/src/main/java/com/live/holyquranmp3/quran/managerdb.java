@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.activity.OnBackPressedCallback;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.button.MaterialButton;
 
@@ -54,7 +55,7 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
     private PlayerViewModel viewModel;
 
     // Handler to update UI timer, progress bar etc,.
-    private final Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler(android.os.Looper.getMainLooper());
     private Utilities utils;
     private final int seekForwardTime = 5000; // 5000 milliseconds
     private final int seekBackwardTime = 5000; // 5000 milliseconds
@@ -236,19 +237,6 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
         return super.onOptionsItemSelected(item);
     }
 
-
-    // @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (viewModel.mediaPlayer.getValue() != null && viewModel.mediaPlayer.getValue().isPlaying()) {
-                viewModel.mediaPlayer.getValue().pause();
-            }
-
-            this.finish();
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
 
     /**
      * Update timer on seekbar

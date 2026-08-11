@@ -1,0 +1,4 @@
+- [ ] Update `compileSdkVersion` and `targetSdkVersion` to 36 in `app/build.gradle`
+- [ ] Migrate `RecitesName.java` to `OnBackPressedCallback`
+- [ ] Migrate `managerdb.java` to `OnBackPressedCallback`
+- [ ] Verify build with `gradle_build app:assembleDebug`

@@ -40,6 +40,20 @@ public class LnaguageClass {
         arabicAuthors.add(new AuthorClass("hthfi", "علي الحذيفي"));
         arabicAuthors.add(new AuthorClass("huthifi_qalon", "علي الحذيفي (رواية قالون)"));
         arabicAuthors.add(new AuthorClass("minsh", "محمد صديق المنشاوي"));
+
+        arabicAuthors.add(new AuthorClass("nufais/Rewayat-Hafs-A-n-Assem", "أحمد النفيس"));
+        arabicAuthors.add(new AuthorClass("shaheen/Rewayat-Hafs-A-n-Assem", "أحمد خليل شاهين"));
+        arabicAuthors.add(new AuthorClass("shamsan/Rewayat-Hafs-A-n-Assem", "الوليد الشمسان"));
+        arabicAuthors.add(new AuthorClass("a_maasaraawi/Rewayat-Hafs-A-n-Assem", "أحمد عيسى المعصراوي"));
+        arabicAuthors.add(new AuthorClass("islam/Rewayat-Hafs-A-n-Assem", "إسلام صبحي"));
+        arabicAuthors.add(new AuthorClass("kurdi", "رعد محمد الكردي"));
+        arabicAuthors.add(new AuthorClass("wdee3", "وديع اليمني"));
+        arabicAuthors.add(new AuthorClass("hazza", "هزاع البلوشي"));
+
+
+
+
+
         arabicAuthors.add(new AuthorClass("s_bud", "صلاح البدير"));
         arabicAuthors.add(new AuthorClass("frs_a", "فارس عباد"));
         arabicAuthors.add(new AuthorClass("bu_khtr", "صلاح بو خاطر"));
@@ -157,6 +171,17 @@ public class LnaguageClass {
         englishAuthors.add(new AuthorClass("hthfi", "Ali Al-Huthaifi"));
         englishAuthors.add(new AuthorClass("huthifi_qalon", "Ali Al-Huthaifi (Rewayat Qalon)"));
         englishAuthors.add(new AuthorClass("minsh", "Mohammed Siddiq Al-Minshawi"));
+        englishAuthors.add(new AuthorClass("nufais/Rewayat-Hafs-A-n-Assem", "Ahmad Alnufais"));
+        englishAuthors.add(new AuthorClass("shaheen/Rewayat-Hafs-A-n-Assem", "Ahmad Khalil Shaheen"));
+        englishAuthors.add(new AuthorClass("shamsan/Rewayat-Hafs-A-n-Assem", "Waleed Al-Shamsan"));
+        englishAuthors.add(new AuthorClass("a_maasaraawi/Rewayat-Hafs-A-n-Assem", "Ahmad Essa El-Masarawi"));
+        englishAuthors.add(new AuthorClass("islam/Rewayat-Hafs-A-n-Assem", "Islam Sobhi"));
+        englishAuthors.add(new AuthorClass("kurdi", "Raad Mohammad Al-Kurdi"));
+        englishAuthors.add(new AuthorClass("wdee3", "Wadee' Hammadi Al-Yamani"));
+        englishAuthors.add(new AuthorClass("hazza", "Hazza Al-Balushi"));
+
+
+
         englishAuthors.add(new AuthorClass("s_bud", "Salah Al-Budair"));
         englishAuthors.add(new AuthorClass("frs_a", "Fares Abbad"));
         englishAuthors.add(new AuthorClass("bu_khtr", "Salah Bukhatir"));
@@ -537,6 +562,18 @@ public class LnaguageClass {
     public static String serverNumber(String EnglishName) {
         String ArabicName = "11";
         if (EnglishName.endsWith("shatri")) ArabicName = "11";
+
+        if (EnglishName.endsWith("nufais/Rewayat-Hafs-A-n-Assem")) ArabicName = "16";
+        if (EnglishName.endsWith("shaheen/Rewayat-Hafs-A-n-Assem")) ArabicName = "16";
+        if (EnglishName.endsWith("shamsan/Rewayat-Hafs-A-n-Assem")) ArabicName = "14";
+        if (EnglishName.endsWith("a_maasaraawi/Rewayat-Hafs-A-n-Assem")) ArabicName = "16";
+        if (EnglishName.endsWith("islam/Rewayat-Hafs-A-n-Assem")) ArabicName = "14";
+        if (EnglishName.endsWith("kurdi")) ArabicName = "6";
+        if (EnglishName.endsWith("wdee3")) ArabicName = "6";
+        if (EnglishName.endsWith("hazza")) ArabicName = "11";
+
+
+
         if (EnglishName.endsWith("ahmad_huth")) ArabicName = "8";
         if (EnglishName.endsWith("hawashi")) ArabicName = "11";
         if (EnglishName.endsWith("trabulsi")) ArabicName = "10";

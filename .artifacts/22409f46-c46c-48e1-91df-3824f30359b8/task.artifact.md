@@ -1,0 +1,4 @@
+- [x] Update `ic_launcher.xml` to use `my_icon_foreground`
+- [x] Update `ic_launcher_round.xml` to use `my_icon_foreground`
+- [x] Verify build
+- [x] Create walkthrough
