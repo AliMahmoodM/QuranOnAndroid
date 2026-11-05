@@ -9,11 +9,11 @@ android {
 
     defaultConfig {
         applicationId "com.live.holyquranmp3.quran"
-        minSdkVersion 21
+        minSdkVersion 24
         //noinspection OldTargetApi
         targetSdkVersion 37
-        versionCode 33
-        versionName "2.1.0"
+        versionCode 35
+        versionName "2.2.1"
         multiDexEnabled true
     }
 
@@ -33,6 +33,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
