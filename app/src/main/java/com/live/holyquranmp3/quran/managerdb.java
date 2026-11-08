@@ -61,6 +61,7 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
     private final int seekBackwardTime = 5000; // 5000 milliseconds
 
     private boolean isDownloading = false;
+    private String currentRecitesName = "";
     private final ExecutorService downloadExecutor = Executors.newSingleThreadExecutor();
 
     @Override
@@ -76,6 +77,7 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
         Bundle b = getIntent().getExtras();
         if (b != null) {
             String recitesName = b.getString("RecitesName");
+            currentRecitesName = recitesName != null ? recitesName : "";
             int songIndex = 0;
             try {
                 songIndex = Integer.parseInt(b.getString("RecitesAYA", "0"));
@@ -231,6 +233,33 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
 
         if (id == R.id.gbackmenu) {
             this.finish();
+        } else if (id == R.id.action_bookmark) {
+            if (viewModel != null && viewModel.currentSongIndex.getValue() != null && viewModel.currentSongIndex.getValue() != -1) {
+                int songIndex = viewModel.currentSongIndex.getValue();
+                int pos = 0;
+                if (viewModel.mediaPlayer.getValue() != null) {
+                    try {
+                        pos = viewModel.mediaPlayer.getValue().getCurrentPosition();
+                    } catch (Exception ignored) {}
+                }
+                String songTitle = "";
+                if (viewModel.songsList.getValue() != null && songIndex < viewModel.songsList.getValue().size()) {
+                    songTitle = viewModel.songsList.getValue().get(songIndex).get("songTitle");
+                }
+                SaveSettings sv = new SaveSettings(this);
+                sv.LoadData();
+                SaveSettings.BookmarkReciterName = currentRecitesName;
+                SaveSettings.BookmarkSongIndex = songIndex;
+                SaveSettings.BookmarkSongPosition = pos;
+                SaveSettings.BookmarkSongTitle = songTitle;
+                
+                SaveSettings.LastReciterName = currentRecitesName;
+                SaveSettings.LastSongIndex = songIndex;
+                SaveSettings.LastSongPosition = pos;
+                
+                sv.SaveData();
+                Toast.makeText(this, "Bookmark Saved!", Toast.LENGTH_SHORT).show();
+            }
         }
 
 
@@ -254,6 +283,8 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
                 if (viewModel.mediaPlayer.getValue() != null) {
                     long totalDuration = viewModel.mediaPlayer.getValue().getDuration();
                     long currentDuration = viewModel.mediaPlayer.getValue().getCurrentPosition();
+
+                    viewModel.updateCurrentPosition((int) currentDuration);
 
                     // Displaying Total Duration time
                     songTotalDurationLabel.setText(utils.milliSecondsToTimer(totalDuration));
@@ -399,8 +430,27 @@ public class managerdb extends BaseActivity implements SeekBar.OnSeekBarChangeLi
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        if (viewModel != null) {
+            viewModel.saveCurrentState();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (viewModel != null) {
+            viewModel.saveCurrentState();
+        }
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
+        if (viewModel != null) {
+            viewModel.saveCurrentState();
+        }
         mHandler.removeCallbacks(mUpdateTimeTask);
         downloadExecutor.shutdownNow();
     }

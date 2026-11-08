@@ -142,6 +142,17 @@ public class RecitesName extends BaseActivity {
             startActivity(intent);
         } else if (id == R.id.action_sort) {
             sortReciters();
+        } else if (id == R.id.action_bookmark) {
+            SaveSettings sv = new SaveSettings(this);
+            sv.LoadData();
+            if (SaveSettings.BookmarkSongIndex != -1 && SaveSettings.BookmarkReciterName != null && !SaveSettings.BookmarkReciterName.isEmpty()) {
+                Intent intent = new Intent(this, managerdb.class);
+                intent.putExtra("RecitesName", SaveSettings.BookmarkReciterName);
+                intent.putExtra("RecitesAYA", String.valueOf(SaveSettings.BookmarkSongIndex));
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "No bookmark saved yet", Toast.LENGTH_SHORT).show();
+            }
         }
         return super.onOptionsItemSelected(item);
     }

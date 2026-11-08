@@ -12,6 +12,10 @@
         android:icon="@drawable/sort"
         android:title="@string/sort"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_bookmark"
+        android:title="@string/bookmark"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        app:showAsAction="ifRoom" />
     <item android:id="@+id/menu"
         android:title="@string/menu"
         android:icon="@drawable/menu"

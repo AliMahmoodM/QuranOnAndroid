@@ -24,7 +24,7 @@
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:titleTextColor="@android:color/white"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
 <!--            android:background="@drawable/rounded_corner_darker"-->
 
             <com.google.android.material.button.MaterialButton

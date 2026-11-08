@@ -15,8 +15,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         sv.LoadData();
         String langCode = getLangCode(sv.LanguageSelect);
 
-        // Create a new context with the desired locale
         Locale newLocale = new Locale(langCode);
+        Locale.setDefault(newLocale);
         Context context = updateResources(newBase, newLocale);
         super.attachBaseContext(context);
     }
@@ -25,6 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         Resources resources = context.getResources();
         Configuration configuration = new Configuration(resources.getConfiguration());
         configuration.setLocale(locale);
+        configuration.setLayoutDirection(locale);
         return context.createConfigurationContext(configuration);
     }
 

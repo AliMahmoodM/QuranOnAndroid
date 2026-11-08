@@ -43,16 +43,40 @@ public class LnaguageClass {
 
         arabicAuthors.add(new AuthorClass("nufais/Rewayat-Hafs-A-n-Assem", "أحمد النفيس"));
         arabicAuthors.add(new AuthorClass("shaheen/Rewayat-Hafs-A-n-Assem", "أحمد خليل شاهين"));
+
+        arabicAuthors.add(new AuthorClass(
+                "waleed-dulaimi", "وليد الدليمي",
+                "https://cdn.mp3quran.net/audio/waleed-dulaimi/r1/"));
+        arabicAuthors.add(new AuthorClass(
+                "ibrahim-kshidan", "إبراهيم كشيدان",
+                "https://cdn.mp3quran.net/audio/ibrahim-kshidan/r1/"));
+        arabicAuthors.add(new AuthorClass(
+                "akhil-rawa", "أخيل عبدالحي روا",
+                "https://cdn.mp3quran.net/audio/akhil-rawa/r1/",
+                "050", "051", "052", "056"));
+        arabicAuthors.add(new AuthorClass(
+                "peshawa-kurdi", "بيشه وا قادر الكردي",
+                "https://cdn.mp3quran.net/audio/peshawa-kurdi/r1/"));
+        arabicAuthors.add(new AuthorClass(
+                "younes-souilass", "يونس سويلص",
+                "https://cdn.mp3quran.net/audio/younes-souilass/r1/",
+                "001", "002", "010", "011", "012", "013", "014", "015", "016",
+                "017", "018", "019", "020", "021", "022", "023", "024", "025",
+                "026", "027", "028", "029", "030", "031", "032", "033", "034",
+                "035", "036", "037", "038", "039", "040", "041", "042", "043",
+                "045", "046", "047", "048", "050", "051", "052", "053", "054",
+                "056", "057", "067", "071", "073", "076", "077", "078", "079",
+                "080", "081", "082", "086", "089", "090", "091", "093", "095",
+                "097", "112"));
+
+
+
         arabicAuthors.add(new AuthorClass("shamsan/Rewayat-Hafs-A-n-Assem", "الوليد الشمسان"));
         arabicAuthors.add(new AuthorClass("a_maasaraawi/Rewayat-Hafs-A-n-Assem", "أحمد عيسى المعصراوي"));
         arabicAuthors.add(new AuthorClass("islam/Rewayat-Hafs-A-n-Assem", "إسلام صبحي"));
         arabicAuthors.add(new AuthorClass("kurdi", "رعد محمد الكردي"));
         arabicAuthors.add(new AuthorClass("wdee3", "وديع اليمني"));
         arabicAuthors.add(new AuthorClass("hazza", "هزاع البلوشي"));
-
-
-
-
 
         arabicAuthors.add(new AuthorClass("s_bud", "صلاح البدير"));
         arabicAuthors.add(new AuthorClass("frs_a", "فارس عباد"));
@@ -179,6 +203,32 @@ public class LnaguageClass {
         englishAuthors.add(new AuthorClass("kurdi", "Raad Mohammad Al-Kurdi"));
         englishAuthors.add(new AuthorClass("wdee3", "Wadee' Hammadi Al-Yamani"));
         englishAuthors.add(new AuthorClass("hazza", "Hazza Al-Balushi"));
+
+
+        englishAuthors.add(new AuthorClass(
+                "waleed-dulaimi", "Waleed Al-Dulaimi",
+                "https://cdn.mp3quran.net/audio/waleed-dulaimi/r1/"));
+        englishAuthors.add(new AuthorClass(
+                "ibrahim-kshidan", "Ibrahim Kishidan",
+                "https://cdn.mp3quran.net/audio/ibrahim-kshidan/r1/"));
+        englishAuthors.add(new AuthorClass(
+                "akhil-rawa", "Akhil Abdulhayy Rawa",
+                "https://cdn.mp3quran.net/audio/akhil-rawa/r1/",
+                "050", "051", "052", "056"));
+        englishAuthors.add(new AuthorClass(
+                "peshawa-kurdi", "Peshawa Qadr Al-Kurdi",
+                "https://cdn.mp3quran.net/audio/peshawa-kurdi/r1/"));
+        englishAuthors.add(new AuthorClass(
+                "younes-souilass", "Younes Souilass",
+                "https://cdn.mp3quran.net/audio/younes-souilass/r1/",
+                "001", "002", "010", "011", "012", "013", "014", "015", "016",
+                "017", "018", "019", "020", "021", "022", "023", "024", "025",
+                "026", "027", "028", "029", "030", "031", "032", "033", "034",
+                "035", "036", "037", "038", "039", "040", "041", "042", "043",
+                "045", "046", "047", "048", "050", "051", "052", "053", "054",
+                "056", "057", "067", "071", "073", "076", "077", "078", "079",
+                "080", "081", "082", "086", "089", "090", "091", "093", "095",
+                "097", "112"));
 
 
 
@@ -529,10 +579,16 @@ public class LnaguageClass {
 
         executor.execute(() -> {
             List<AuthorClass> baseList = (languageSelect == 1) ? ALL_SURAS_ARABIC : ALL_SURAS_ENGLISH;
+            AuthorClass reciter = getReciter(ReciteName, languageSelect);
+            String audioUrlPrefix = reciter == null ? null : reciter.AudioUrlPrefix;
             ArrayList<AuthorClass> resultList = new ArrayList<>();
 
             for (AuthorClass ac : baseList) {
                 try {
+                    if (!isSurahAvailable(reciter, ac.ServerName)) {
+                        continue;
+                    }
+
                     String sdPath = Environment.getExternalStorageDirectory().getPath() + "/";
                     String ayaPath = sdPath + ReciteName + ac.ServerName + ".mp3";
                     File myFile = new File(ayaPath);
@@ -540,7 +596,9 @@ public class LnaguageClass {
                     if (myFile.exists()) {
                         resultList.add(new AuthorClass(ac.ServerName, ac.RealName, getAvailableStatus(languageSelect), ayaPath));
                     } else {
-                        String serverUrl = "https://server" + serverNumber(ReciteName) + ".mp3quran.net/" + ReciteName + "/" + ac.ServerName + ".mp3";
+                        String serverUrl = audioUrlPrefix != null
+                                ? audioUrlPrefix + ac.ServerName + ".mp3"
+                                : "https://server" + serverNumber(ReciteName) + ".mp3quran.net/" + ReciteName + "/" + ac.ServerName + ".mp3";
                         resultList.add(new AuthorClass(ac.ServerName, ac.RealName, getOnlineStatus(languageSelect), serverUrl));
                     }
                 } catch (Exception ex) {
@@ -549,6 +607,28 @@ public class LnaguageClass {
             }
             handler.post(() -> listener.onSurahListReady(resultList));
         });
+    }
+
+    private static AuthorClass getReciter(String reciteName, int languageSelect) {
+        List<AuthorClass> authors = (languageSelect == 1) ? ALL_AUTHORS_ARABIC : ALL_AUTHORS_ENGLISH;
+        for (AuthorClass author : authors) {
+            if (author.ServerName.equals(reciteName)) {
+                return author;
+            }
+        }
+        return null;
+    }
+
+    private static boolean isSurahAvailable(AuthorClass reciter, String surahNumber) {
+        if (reciter == null || reciter.AvailableSurahNumbers.length == 0) {
+            return true;
+        }
+        for (String availableSurahNumber : reciter.AvailableSurahNumbers) {
+            if (availableSurahNumber.equals(surahNumber)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static String getAvailableStatus(int languageSelect) {
