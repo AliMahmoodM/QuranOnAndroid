@@ -18,7 +18,6 @@ import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -48,7 +47,6 @@ public class RecitesName extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
 
         binding = ActivityRecitesNameBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

@@ -50,8 +50,7 @@
             android:paddingTop="7dp"
             android:paddingRight="14dp"
             android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp" />
+            android:textAppearance="?attr/textAppearanceListItem" />
 
         <ImageView
             android:id="@+id/imageView"

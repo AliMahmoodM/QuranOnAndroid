@@ -26,7 +26,7 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?attr/textAppearanceListItem"
         android:textColor="@android:color/white" />
 
     <ImageView
